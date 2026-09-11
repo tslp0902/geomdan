@@ -65,7 +65,7 @@
     .content {
       padding: 20px;
     }
-    /* 카운팅 통계 박스 */
+    /* 통계 박스 */
     .stats-card {
       background: #f8fafc;
       border: 1px solid var(--border);
@@ -331,8 +331,8 @@
       <strong>💡 국민신문고 초간단 접수 가이드</strong>
       <ol>
         <li><strong>[복사 & 바로가기]</strong> 누르면 문안 복사와 함께 국민신문고로 이동합니다.</li>
-        <li>국민신문고 로그인 후 입력창에 <strong>[붙여넣기(Ctrl+V)]</strong>를 합니다.</li>
-        <li><strong>민원 발생지역:</strong> 인천광역시 서구 (검단구 권역)</li>
+        <li>국민신문고 로그인 후 상단 메뉴에서 <strong>[민원신청]</strong>으로 들어갑니다.</li>
+        <li><strong>민원 발생지역:</strong> 인천광역시 서구 **검단구**</li>
         <li><strong>처리기관:</strong> <strong>인천광역시</strong> 및 <strong>인천광역시 서구</strong> 지정 후 제출!</li>
       </ol>
     </div>
@@ -444,7 +444,7 @@
     const toast = document.getElementById("toast");
     toast.innerText = msg;
     toast.className = "show";
-    setTimeout(() => { toast.className = toast.className.replace("show", "",); }, 2500);
+    setTimeout(() => { toast.className = toast.className.replace("show", ""); }, 2500);
   }
 
   displayComplaint(0);

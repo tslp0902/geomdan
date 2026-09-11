@@ -3,28 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>더샵 검단레이크파크 - 검단구 신청사 복합화 및 철도망 연계 민원</title>
+  <title>더샵 검단레이크파크 - 공식 민원 접수 센터</title>
   <style>
     :root {
-      --primary: #0f3d64; /* 더샵 고유 네이비 */
+      --primary: #0f3d64;
       --secondary: #0078d4;
-      --accent: #e53935;
       --bg: #f4f6f9;
       --card-bg: #ffffff;
       --text: #222222;
       --gray: #666666;
+      --border: #e2e8f0;
     }
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Malgun Gothic", "맑은 고딕", "Apple SD Gothic Neo", sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     }
     body {
       background-color: var(--bg);
       color: var(--text);
       line-height: 1.6;
-      padding: 16px;
+      padding: 20px 16px;
       display: flex;
       justify-content: center;
     }
@@ -32,182 +32,208 @@
       width: 100%;
       max-width: 600px;
       background: var(--card-bg);
-      border-radius: 16px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
       overflow: hidden;
-      padding-bottom: 24px;
+      padding-bottom: 30px;
     }
     .header {
-      background: linear-gradient(135deg, #0a2540 0%, #1a4a75 100%);
+      background: linear-gradient(135deg, #0a2540 0%, #1b4f8a 100%);
       color: #fff;
-      padding: 24px 20px;
+      padding: 30px 20px;
       text-align: center;
     }
     .badge {
       display: inline-block;
-      background: rgba(255,255,255,0.2);
-      padding: 4px 12px;
+      background: rgba(255,255,255,0.15);
+      padding: 6px 14px;
       border-radius: 20px;
       font-size: 13px;
-      margin-bottom: 8px;
-      font-weight: 500;
+      margin-bottom: 12px;
+      font-weight: 600;
+      letter-spacing: -0.5px;
     }
     .header h1 {
-      font-size: 20px;
+      font-size: 21px;
       font-weight: 700;
       line-height: 1.4;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
     }
     .header p {
-      font-size: 13px;
-      opacity: 0.85;
+      font-size: 13.5px;
+      opacity: 0.9;
     }
     .content {
-      padding: 20px;
+      padding: 24px 20px;
     }
     .alert-box {
       background: #eef6fc;
       border-left: 4px solid var(--secondary);
-      padding: 12px 14px;
-      border-radius: 4px;
+      padding: 14px 16px;
+      border-radius: 8px;
       font-size: 13.5px;
-      margin-bottom: 20px;
+      margin-bottom: 24px;
+      color: #1e3a8a;
     }
     .alert-box strong {
-      color: var(--secondary);
+      color: #0d47a1;
     }
     .section-title {
-      font-size: 16px;
-      font-weight: bold;
+      font-size: 15px;
+      font-weight: 700;
       color: var(--primary);
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       display: flex;
       align-items: center;
       gap: 6px;
     }
     .info-card {
-      background: #fafafa;
-      border: 1px solid #ebebeb;
-      border-radius: 10px;
-      padding: 14px;
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
       font-size: 13.5px;
-      margin-bottom: 20px;
+      margin-bottom: 24px;
     }
     .info-card ul {
       padding-left: 18px;
-      margin-top: 6px;
     }
     .info-card li {
-      margin-bottom: 4px;
+      margin-bottom: 6px;
+      color: #334155;
     }
-    /* 민원 박스 */
+    .info-card li:last-child {
+      margin-bottom: 0;
+    }
+    /* 민원 미리보기 박스 디자인 개선 */
     .preview-box {
-      border: 1.5px solid #d0d7de;
-      border-radius: 10px;
-      padding: 14px;
-      background: #fff;
-      margin-bottom: 16px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      background: #ffffff;
+      margin-bottom: 18px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+    }
+    .preview-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
     }
     .preview-label {
       font-size: 12px;
-      font-weight: bold;
-      color: var(--gray);
-      margin-bottom: 4px;
+      font-weight: 700;
+      color: var(--secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .page-indicator {
+      font-size: 12px;
+      background: #f1f5f9;
+      color: #64748b;
+      padding: 2px 8px;
+      border-radius: 10px;
+      font-weight: 600;
     }
     .preview-title {
-      font-size: 14px;
-      font-weight: bold;
-      color: #111;
+      font-size: 14.5px;
+      font-weight: 700;
+      color: #0f172a;
       margin-bottom: 12px;
-      padding-bottom: 8px;
-      border-bottom: 1px dashed #e1e4e8;
+      padding-bottom: 10px;
+      border-bottom: 1px dashed var(--border);
+      line-height: 1.4;
     }
     .preview-body {
       font-size: 13px;
-      color: #333;
+      color: #475569;
       white-space: pre-wrap;
-      max-height: 180px;
+      max-height: 200px;
       overflow-y: auto;
-      background: #fdfdfd;
-      padding: 8px;
-      border-radius: 6px;
+      background: #f8fafc;
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #f1f5f9;
     }
-    /* 버튼 */
+    /* 버튼 스타일 */
     .btn-group {
       display: flex;
       flex-direction: column;
-      gap: 10px;
-      margin-bottom: 20px;
+      gap: 12px;
+      margin-bottom: 24px;
     }
     .btn {
       display: flex;
       align-items: center;
       justify-content: center;
       width: 100%;
-      padding: 14px;
-      border-radius: 10px;
+      padding: 15px;
+      border-radius: 12px;
       font-size: 15px;
-      font-weight: bold;
+      font-weight: 700;
       border: none;
       cursor: pointer;
       text-decoration: none;
-      transition: 0.2s;
+      transition: all 0.2s ease;
     }
     .btn-primary {
       background: #0078d4;
       color: #fff;
-      box-shadow: 0 4px 10px rgba(0, 120, 212, 0.3);
+      box-shadow: 0 4px 14px rgba(0, 120, 212, 0.35);
     }
     .btn-primary:active {
       background: #005a9e;
       transform: scale(0.98);
     }
     .btn-refresh {
-      background: #f1f3f5;
-      color: #333;
-      border: 1px solid #ced4da;
+      background: #ffffff;
+      color: #334155;
+      border: 1px solid #cbd5e1;
     }
     .btn-refresh:active {
-      background: #e9ecef;
+      background: #f1f5f9;
     }
     .guide-box {
-      background: #fff8e1;
-      border: 1px solid #ffe082;
-      border-radius: 8px;
-      padding: 12px 14px;
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      border-radius: 12px;
+      padding: 16px;
       font-size: 13px;
-      margin-bottom: 16px;
+      color: #92400e;
+      margin-bottom: 20px;
     }
     .guide-box ol {
       padding-left: 18px;
-      margin-top: 6px;
+      margin-top: 8px;
     }
     .guide-box li {
-      margin-bottom: 4px;
+      margin-bottom: 5px;
     }
     .footer {
       text-align: center;
       font-size: 12px;
-      color: #888;
-      border-top: 1px solid #eee;
-      padding-top: 16px;
+      color: #94a3b8;
+      border-top: 1px solid var(--border);
+      padding-top: 20px;
       margin-top: 10px;
+      font-weight: 500;
     }
-    /* 복사 토스트 */
+    /* 토스트 메시지 */
     #toast {
       visibility: hidden;
-      min-width: 250px;
-      background-color: #333;
+      min-width: 280px;
+      background-color: #1e293b;
       color: #fff;
       text-align: center;
-      border-radius: 24px;
-      padding: 12px 16px;
+      border-radius: 30px;
+      padding: 14px 20px;
       position: fixed;
       z-index: 999;
       bottom: 30px;
       left: 50%;
       transform: translateX(-50%);
-      font-size: 14px;
+      font-size: 13.5px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
       opacity: 0;
       transition: opacity 0.3s, bottom 0.3s;
     }
@@ -224,31 +250,33 @@
   <!-- 상단 공식 헤더 -->
   <div class="header">
     <div class="badge">더샵 검단레이크파크 공식</div>
-    <h1>검단구 신청사 복합화 및<br>철도망 연계 주민 민원 독려</h1>
-    <p>우리 단지의 가치와 검단의 미래를 바꾸는 소중한 한 표</p>
+    <h1>검단구 신청사 복합화 및<br>철도망 연계 주민 민원 센터</h1>
+    <p>우리 단지의 미래 가치를 높이는 소중한 행동력</p>
   </div>
 
   <div class="content">
     <div class="alert-box">
-      📅 <strong>집중 민원 기간: 9월 30일까지</strong><br>
-      신청사 타당성 조사 착수 전 주민들의 일치된 의견이 반드시 반영되어야 단일청사가 아닌 <strong>'복합문화청사 및 철도 연계'</strong>로 전환됩니다.
+      📅 <strong>집중 참여 기간: ~ 9월 30일까지</strong><br>
+      신청사 타당성 조사 착수 전, 주민들의 일치된 의견이 반영되어야 단일청사가 아닌 <strong>'복합문화청사 및 철도 연계'</strong>로 최종 전환됩니다.
     </div>
 
     <div class="section-title">📌 주요 건의 핵심 사항</div>
     <div class="info-card">
       <ul>
-        <li><strong>문화·체육·공공 복합청사 건립:</strong> 단순 행정청사가 아닌 주민 문화시설을 아우르는 미래형 복합청사 추진</li>
-        <li><strong>인천1호선 104역 신설 재검토:</strong> B/C값 상향(0.7 이상)을 통한 역 신설 재추진</li>
-        <li><strong>인천순환3호선 & 대장홍대선 연계:</strong> 검단구청역 경유 및 유치를 통한 핵심 교통 거점화</li>
-        <li><strong>수변·호수공원 생활권 완성:</strong> 구청사-나진포천-중앙호수공원을 잇는 명품 인프라 구축</li>
+        <li><strong>문화·체육 복합청사 건립:</strong> 단순 행정청사가 아닌 문화예술회관 및 공공시설 포함</li>
+        <li><strong>인천1호선 104역 신설 재검토:</strong> B/C값 상향(0.7 이상) 목표 추진</li>
+        <li><strong>광역 철도망 연계:</strong> 인천순환3호선 및 대장홍대선 검단구청역 경유 유치</li>
+        <li><strong>수변·호수공원 생활권 완성:</strong> 구청사부터 나진포천·중앙호수공원을 잇는 인프라 구축</li>
       </ul>
     </div>
 
     <div class="section-title">📝 자동 생성 민원 문안</div>
     <div class="preview-box">
-      <div class="preview-label">민원 제목 (클릭 시 자동 복사)</div>
+      <div class="preview-header">
+        <span class="preview-label">국민신문고 제출용 템플릿</span>
+        <span class="page-indicator" id="pageIndicator">문안 1 / 3</span>
+      </div>
       <div class="preview-title" id="complaintTitle"></div>
-      <div class="preview-label">민원 본문 내용 (클릭 시 자동 복사)</div>
       <div class="preview-body" id="complaintBody"></div>
     </div>
 
@@ -258,18 +286,18 @@
         📋 민원문안 복사 & 국민신문고 바로가기
       </button>
       <button class="btn btn-refresh" onclick="generateNewComplaint()">
-        🔄 다른 문안으로 변경 (반복 참여 시)
+        🔄 다른 문안으로 변경 (반복 참여용)
       </button>
     </div>
 
     <!-- 작성 안내 -->
     <div class="guide-box">
-      <strong>💡 국민신문고 제출 요령 (초간단 1분)</strong>
+      <strong>💡 국민신문고 초간단 접수 가이드</strong>
       <ol>
-        <li>위 <strong>[민원문안 복사 & 국민신문고 바로가기]</strong> 버튼을 누르면 문안이 클립보드에 자동 복사되고 창이 열립니다.</li>
-        <li>국민신문고 로그인 후 <strong>제목 및 본문 입력창에 [붙여넣기(Ctrl+V)]</strong>를 합니다.</li>
+        <li>위 <strong>[복사 & 바로가기]</strong> 버튼을 누르면 문안이 복사되고 국민신문고로 이동합니다.</li>
+        <li>국민신문고 로그인 후 입력창에 <strong>[붙여넣기(Ctrl+V)]</strong>를 합니다.</li>
         <li><strong>민원 발생지역:</strong> 인천광역시 서구 (검단구 권역)</li>
-        <li><strong>처리기관 선택:</strong> <strong>인천광역시</strong> 및 <strong>인천광역시 서구</strong> 지정 후 제출!</li>
+        <li><strong>처리기관:</strong> <strong>인천광역시</strong> 및 <strong>인천광역시 서구</strong> 지정 후 제출!</li>
       </ol>
     </div>
 
@@ -282,7 +310,6 @@
 <div id="toast">민원 문안이 클립보드에 복사되었습니다!</div>
 
 <script>
-  // 다양한 민원 문안 템플릿 (반복 참여 시 랜덤/순차 생성)
   const templates = [
     {
       title: "검단구 신청사 업무14 부지 복합화 건립 및 철도망(104역·순환3호선·대장홍대선) 연계 반영 촉구",
@@ -337,6 +364,7 @@
   function displayComplaint(index) {
     document.getElementById("complaintTitle").innerText = templates[index].title;
     document.getElementById("complaintBody").innerText = templates[index].body;
+    document.getElementById("pageIndicator").innerText = `문안 ${index + 1} / ${templates.length}`;
   }
 
   function generateNewComplaint() {
@@ -368,7 +396,6 @@
     setTimeout(() => { toast.className = toast.className.replace("show", ""); }, 2500);
   }
 
-  // 초기 실행
   displayComplaint(0);
 </script>
 

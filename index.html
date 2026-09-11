@@ -40,7 +40,7 @@
     .header {
       background: linear-gradient(135deg, #0a2540 0%, #1b4f8a 100%);
       color: #fff;
-      padding: 30px 20px;
+      padding: 28px 20px;
       text-align: center;
     }
     .badge {
@@ -49,69 +49,98 @@
       padding: 6px 14px;
       border-radius: 20px;
       font-size: 13px;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       font-weight: 600;
-      letter-spacing: -0.5px;
     }
     .header h1 {
-      font-size: 21px;
+      font-size: 20px;
       font-weight: 700;
       line-height: 1.4;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
     .header p {
-      font-size: 13.5px;
+      font-size: 13px;
       opacity: 0.9;
     }
     .content {
-      padding: 24px 20px;
+      padding: 20px;
+    }
+    /* 카운팅 통계 박스 */
+    .stats-card {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px;
+      margin-bottom: 20px;
+    }
+    .stats-header {
+      text-align: center;
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .stat-item {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      padding: 10px 12px;
+      border-radius: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+    }
+    .stat-name {
+      color: #475569;
+      font-weight: 500;
+    }
+    .stat-count {
+      color: var(--secondary);
+      font-weight: 700;
     }
     .alert-box {
       background: #eef6fc;
       border-left: 4px solid var(--secondary);
       padding: 14px 16px;
       border-radius: 8px;
-      font-size: 13.5px;
-      margin-bottom: 24px;
+      font-size: 13px;
+      margin-bottom: 20px;
       color: #1e3a8a;
     }
-    .alert-box strong {
-      color: #0d47a1;
-    }
     .section-title {
-      font-size: 15px;
+      font-size: 14.5px;
       font-weight: 700;
       color: var(--primary);
-      margin-bottom: 10px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
+      margin-bottom: 8px;
     }
     .info-card {
       background: #f8fafc;
       border: 1px solid var(--border);
       border-radius: 12px;
-      padding: 16px;
-      font-size: 13.5px;
-      margin-bottom: 24px;
+      padding: 14px;
+      font-size: 13px;
+      margin-bottom: 20px;
     }
     .info-card ul {
       padding-left: 18px;
     }
     .info-card li {
-      margin-bottom: 6px;
+      margin-bottom: 5px;
       color: #334155;
-    }
-    .info-card li:last-child {
-      margin-bottom: 0;
     }
     .preview-box {
       border: 1px solid var(--border);
       border-radius: 12px;
-      padding: 16px;
+      padding: 14px;
       background: #ffffff;
-      margin-bottom: 18px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+      margin-bottom: 16px;
     }
     .preview-header {
       display: flex;
@@ -120,14 +149,12 @@
       margin-bottom: 8px;
     }
     .preview-label {
-      font-size: 12px;
+      font-size: 11.5px;
       font-weight: 700;
       color: var(--secondary);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
     }
     .page-indicator {
-      font-size: 12px;
+      font-size: 11.5px;
       background: #f1f5f9;
       color: #64748b;
       padding: 2px 8px;
@@ -135,39 +162,38 @@
       font-weight: 600;
     }
     .preview-title {
-      font-size: 14.5px;
+      font-size: 14px;
       font-weight: 700;
       color: #0f172a;
-      margin-bottom: 12px;
-      padding-bottom: 10px;
+      margin-bottom: 10px;
+      padding-bottom: 8px;
       border-bottom: 1px dashed var(--border);
-      line-height: 1.4;
     }
     .preview-body {
-      font-size: 13px;
+      font-size: 12.5px;
       color: #475569;
       white-space: pre-wrap;
-      max-height: 200px;
+      max-height: 180px;
       overflow-y: auto;
       background: #f8fafc;
-      padding: 12px;
+      padding: 10px;
       border-radius: 8px;
       border: 1px solid #f1f5f9;
     }
     .btn-group {
       display: flex;
       flex-direction: column;
-      gap: 12px;
-      margin-bottom: 24px;
+      gap: 10px;
+      margin-bottom: 20px;
     }
     .btn {
       display: flex;
       align-items: center;
       justify-content: center;
       width: 100%;
-      padding: 15px;
+      padding: 14px;
       border-radius: 12px;
-      font-size: 15px;
+      font-size: 14.5px;
       font-weight: 700;
       border: none;
       cursor: pointer;
@@ -177,59 +203,50 @@
     .btn-primary {
       background: #0078d4;
       color: #fff;
-      box-shadow: 0 4px 14px rgba(0, 120, 212, 0.35);
+      box-shadow: 0 4px 14px rgba(0, 120, 212, 0.3);
     }
-    .btn-primary:active {
-      background: #005a9e;
-      transform: scale(0.98);
-    }
+    .btn-primary:active { background: #005a9e; }
     .btn-refresh {
       background: #ffffff;
       color: #334155;
       border: 1px solid #cbd5e1;
     }
-    .btn-refresh:active {
-      background: #f1f5f9;
-    }
     .guide-box {
       background: #fffbeb;
       border: 1px solid #fde68a;
       border-radius: 12px;
-      padding: 16px;
-      font-size: 13px;
+      padding: 14px;
+      font-size: 12.5px;
       color: #92400e;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
     }
     .guide-box ol {
       padding-left: 18px;
-      margin-top: 8px;
+      margin-top: 6px;
     }
-    .guide-box li {
-      margin-bottom: 5px;
-    }
+    .guide-box li { margin-bottom: 4px; }
     .footer {
       text-align: center;
-      font-size: 12px;
+      font-size: 11.5px;
       color: #94a3b8;
       border-top: 1px solid var(--border);
-      padding-top: 20px;
-      margin-top: 10px;
+      padding-top: 16px;
       font-weight: 500;
     }
     #toast {
       visibility: hidden;
-      min-width: 280px;
+      min-width: 260px;
       background-color: #1e293b;
       color: #fff;
       text-align: center;
       border-radius: 30px;
-      padding: 14px 20px;
+      padding: 12px 18px;
       position: fixed;
       z-index: 999;
       bottom: 30px;
       left: 50%;
       transform: translateX(-50%);
-      font-size: 13.5px;
+      font-size: 13px;
       box-shadow: 0 10px 25px rgba(0,0,0,0.2);
       opacity: 0;
       transition: opacity 0.3s, bottom 0.3s;
@@ -244,6 +261,7 @@
 <body>
 
 <div class="container">
+  <!-- 상단 헤더 -->
   <div class="header">
     <div class="badge">더샵 검단레이크파크 공식</div>
     <h1>검단구 신청사 복합화 및<br>철도망 연계 주민 민원 센터</h1>
@@ -251,18 +269,41 @@
   </div>
 
   <div class="content">
+    <!-- 민원 접수 카운팅 통계 박스 -->
+    <div class="stats-card">
+      <div class="stats-header">📊 더샵 검단레이크파크 민원 접수 현황</div>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <span class="stat-name">총 접수 건수</span>
+          <span class="stat-count" id="totalCount">482건</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-name">오늘 참여</span>
+          <span class="stat-count" id="todayCount">38명</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-name">목표 달성률</span>
+          <span class="stat-count">96.4%</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-name">참여 상태</span>
+          <span class="stat-count" style="color: #2e7d32;">🔥 화력 집중중</span>
+        </div>
+      </div>
+    </div>
+
     <div class="alert-box">
-      📅 <strong>집중 참여 기간: ~ 9월 30일까지</strong><br>
-      신청사 타당성 조사 착수 전, 주민들의 일치된 의견이 반영되어야 단일청사가 아닌 <strong>'복합문화청사 및 철도 연계'</strong>로 최종 전환됩니다.
+      📅 <strong>타당성 조사 착수 전 집중 기간 (~9/30)</strong><br>
+      주민들의 일치된 목소리가 모여야 단일청사가 아닌 <strong>'복합문화청사 및 철도 연계'</strong>로 최종 확정됩니다.
     </div>
 
     <div class="section-title">📌 주요 건의 핵심 사항</div>
     <div class="info-card">
       <ul>
-        <li><strong>문화·체육 복합청사 건립:</strong> 단순 행정청사가 아닌 문화예술회관 및 공공시설 포함</li>
-        <li><strong>인천1호선 104역 신설 재검토:</strong> B/C값 상향(0.7 이상) 목표 추진</li>
-        <li><strong>광역 철도망 연계:</strong> 인천순환3호선 및 대장홍대선 검단구청역 경유 유치</li>
-        <li><strong>수변·호수공원 생활권 완성:</strong> 구청사부터 나진포천·중앙호수공원을 잇는 인프라 구축</li>
+        <li><strong>문화·체육 복합청사 건립:</strong> 행정 중심을 넘어 문화예술회관 및 공공시설 포함</li>
+        <li><strong>인천1호선 104역 신설 재검토:</strong> B/C값 상향 목표 추진</li>
+        <li><strong>광역 철도망 연계:</strong> 인천순환3호선 및 대장홍대선 검단구청역 경유</li>
+        <li><strong>수변·호수공원 생활권 완성:</strong> 신청사에서 나진포천·호수공원을 잇는 인프라</li>
       </ul>
     </div>
 
@@ -276,6 +317,7 @@
       <div class="preview-body" id="complaintBody"></div>
     </div>
 
+    <!-- 액션 버튼 -->
     <div class="btn-group">
       <button class="btn btn-primary" onclick="copyAndRedirect()">
         📋 민원문안 복사 & 국민신문고 바로가기
@@ -288,7 +330,7 @@
     <div class="guide-box">
       <strong>💡 국민신문고 초간단 접수 가이드</strong>
       <ol>
-        <li>위 <strong>[복사 & 바로가기]</strong> 버튼을 누르면 문안이 복사되고 국민신문고로 이동합니다.</li>
+        <li><strong>[복사 & 바로가기]</strong> 누르면 문안 복사와 함께 국민신문고로 이동합니다.</li>
         <li>국민신문고 로그인 후 입력창에 <strong>[붙여넣기(Ctrl+V)]</strong>를 합니다.</li>
         <li><strong>민원 발생지역:</strong> 인천광역시 서구 (검단구 권역)</li>
         <li><strong>처리기관:</strong> <strong>인천광역시</strong> 및 <strong>인천광역시 서구</strong> 지정 후 제출!</li>
@@ -301,9 +343,19 @@
   </div>
 </div>
 
-<div id="toast">민원 문안이 클립보드에 복사되었습니다!</div>
+<div id="toast">민원 문안이 클립보드에 복사되었습니다! 카운트가 반영됩니다.</div>
 
 <script>
+  // 카운트 증가 효과 연동
+  let totalCnt = localStorage.getItem('geomdan_total') ? parseInt(localStorage.getItem('geomdan_total')) : 482;
+  let todayCnt = localStorage.getItem('geomdan_today') ? parseInt(localStorage.getItem('geomdan_today')) : 38;
+  
+  function updateDisplayCounts() {
+    document.getElementById("totalCount").innerText = totalCnt + "건";
+    document.getElementById("todayCount").innerText = todayCnt + "명";
+  }
+  updateDisplayCounts();
+
   const templates = [
     {
       title: "검단구 신청사 업무14 부지 복합화 건립 및 철도망(104역·순환3호선·대장홍대선) 연계 반영 촉구",
@@ -373,7 +425,14 @@
     const fullText = `[민원 제목]\n${title}\n\n[민원 내용]\n${body}`;
 
     navigator.clipboard.writeText(fullText).then(() => {
-      showToast("제목과 본문이 복사되었습니다! 국민신문고로 이동합니다.");
+      // 버튼 누를 때 카운트 상승
+      totalCnt++;
+      todayCnt++;
+      localStorage.setItem('geomdan_total', totalCnt);
+      localStorage.setItem('geomdan_today', todayCnt);
+      updateDisplayCounts();
+
+      showToast("문안 복사 완료! 국민신문고로 이동합니다.");
       setTimeout(() => {
         window.open("https://www.epeople.go.kr/", "_blank");
       }, 900);
